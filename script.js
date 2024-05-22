@@ -74,8 +74,8 @@ function processCommand(command) {
     speak('Opening WhatsApp');
     window.open('https://www.whatsapp.com', '_blank');
   } 
-  else if (command === 'open sweety') {
-    speak('Opening sweety');
+  else if (command === 'open video') {
+    speak('Opening Video');
     window.open('https://www.pornhub.com/view_video.php?viewkey=ph627726b3ca13a', '_blank');
   } else if (command === 'play music') {
     if (!musicPlaying) {
