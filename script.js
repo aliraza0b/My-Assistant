@@ -1,5 +1,8 @@
 const btn = document.querySelector('.talk');
 const content = document.querySelector('.content');
+const music = document.getElementById('music');
+
+let musicPlaying = false; // Flag to track if music is currently playing
 
 function speak(text) {
   const text_speak = new SpeechSynthesisUtterance(text);
@@ -10,8 +13,8 @@ function speak(text) {
 }
 
 function wishMe() {
-  var day = new Date();
-  var hour = day.getHours();
+  const day = new Date();
+  const hour = day.getHours();
 
   if (hour >= 0 && hour < 12) {
     speak("Good Morning Boss...");
@@ -61,16 +64,37 @@ function processCommand(command) {
   } else if (command === 'open google') {
     speak('Opening Google');
     window.open('https://www.google.com', '_blank');
-  } 
-else if (command === 'open youtube') {
-  speak('Opening Youtube');
-  window.open('https://www.youtube.com', '_blank');
-} else if (command === 'play music') {
-    speak('Playing music');
-    // Add your own logic to play music
-  } else if (command === 'stop music') {
-    speak('Stopping music');
-    // Add your own logic to stop music
+  } else if (command === 'open youtube') {
+    speak('Opening YouTube');
+    window.open('https://www.youtube.com', '_blank');
+  } else if (command === 'open facebook') {
+    speak('Opening Facebook');
+    window.open('https://www.facebook.com', '_blank');
+  } else if (command === 'open whatsapp') {
+    speak('Opening WhatsApp');
+    window.open('https://www.whatsapp.com', '_blank');
+  } else if (command === 'play music') {
+    if (!musicPlaying) {
+      speak('Playing music');
+      fetch('https://my-assistant-beta.vercel.app/play/track_id_here') // Replace 'track_id_here' with the actual track ID
+        .then(response => response.text())
+        .then(data => speak(data))
+        .catch(err => speak('Error: Unable to play track.'));
+      musicPlaying = true;
+    } else {
+      speak('Music is already playing');
+    }
+  } else if (command === 'pause music') {
+    if (musicPlaying) {
+      speak('Pausing music');
+      fetch('https://my-assistant-beta.vercel.app/pause')
+        .then(response => response.text())
+        .then(data => speak(data))
+        .catch(err => speak('Error: Unable to pause playback.'));
+      musicPlaying = false;
+    } else {
+      speak('No music is currently playing');
+    }
   } else {
     speak("I'm sorry, I didn't understand that. Could you please repeat yourself?");
   }

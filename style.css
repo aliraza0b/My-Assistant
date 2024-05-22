@@ -9,7 +9,7 @@
     min-height: 100vh;
     position: relative;
     width: 100%;
-    background: #000;
+    background: #1e1f26;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,7 @@
     width: 40vw;
     height: 50px;
     border-radius: 20px;
-    background: rgb(202 253 255 / 50%);
+    background: #87fbd4d5;
   }
   
   .main .input .talk {
@@ -52,11 +52,11 @@
   
   .main .input .talk i {
     font-size: 20px;
-    color: #aed0d0;
+    color: #d71717;
   }
   
   .main .input .content {
-    color: #aed0d0;
+    color: #d71717;
     font-size: 15px;
     margin-right: 20px;
   }
@@ -66,21 +66,33 @@
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
-  .rounded {
-    border-radius: 50%;
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  .custom-style{
+    color: #87fbd4;
+  }
+  .mt-28{
+    margin-top: 28px;
+  }
+  .text-center{
+    text-align: center;
   }
   @keyframes pulse {
     0% {
       transform: scale(1);
-      box-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+      box-shadow: 0 0 5px #87fbd4, 0 0 10px #87fbd4, 0 0 15px #87fbd4, 0 0 20px #87fbd4;
     }
     50% {
       transform: scale(1.1);
-      box-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff;
+      box-shadow: 0 0 10px #87fbd4, 0 0 20px #87fbd4, 0 0 30px #87fbd4, 0 0 40px #87fbd4;
     }
     100% {
       transform: scale(1);
-      box-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff, 0 0 20px #007bff;
+      box-shadow: 0 0 5px #87fbd4, 0 0 10px #87fbd4, 0 0 15px #87fbd4, 0 0 20px #87fbd4;
     }
   }
   
