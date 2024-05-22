@@ -4,12 +4,19 @@
     box-sizing: border-box;
     font-family: "Roboto Mono", monospace;
   }
-  
+  .bg-img{
+    background-image: url(./assets/bg-img.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    max-width: 100%;
+  }
   .main {
     min-height: 100vh;
     position: relative;
     width: 100%;
-    background: #1e1f26;
+    /* background: #1e1f26; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,8 +68,8 @@
     margin-right: 20px;
   }
   .avatar {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
@@ -70,7 +77,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
   }
   .custom-style{
     color: #87fbd4;
