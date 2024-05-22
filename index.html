@@ -16,7 +16,11 @@
     />
     <title>My Assistant</title>
   </head>
-  <body>
+  <body  onload="hideLoader(DelayNode)">
+    <div class="page-loader">
+      <div class="spinner"></div>
+      <div class="txt">Loading...</div>
+    </div>
     <section class="main">
       <div class="image-container">
         <img
@@ -37,10 +41,14 @@
       </div>
       <!-- <audio id="music" src="path/to/your/musicfile.mp3"></audio> -->
     </section>
-    <div class="page-loader">
-      <div class="spinner"></div>
-      <div class="txt">Loading...</div>
-    </div>
+    
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="./script.js"></script>
+    <script>
+      function hideLoader(){
+  $('.page-loader').fadeOut('slow');
+}
+    </script>
   </body>
 </html>
